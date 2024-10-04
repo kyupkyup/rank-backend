@@ -1,16 +1,17 @@
-interface Player {
+export interface Player {
     id: number;
     buyin: number;
     rank: number;
 }
 
-interface Result {
+export interface Result {
     id: number;
     finalScore: number;
 }
 
-function distributePrize(players: Player[]): Result[] {
-    // 총 인원의 20% 안에 들어가는 인원의 수 계산
+export function distributePrize(players: Player[]): Result[] {
+    if (players.length < 5) return []
+    // 총 인원의 20% 안에  들어가는 인원의 수 계산
     const numPlayers = players.length;
     const topPercentageCount = Math.max(1, Math.floor(numPlayers * 0.2)); // 최소 1명
 
