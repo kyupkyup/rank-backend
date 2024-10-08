@@ -1,4 +1,6 @@
 import Fastify from 'fastify'
+import { addGame } from '@api/addGame'
+
 const fastify = Fastify({
     logger: true
 })
@@ -7,6 +9,8 @@ const fastify = Fastify({
 fastify.get('/', async function handler(request, reply) {
     return { hello: 'world' }
 })
+
+addGame(fastify)
 
 // Run the server!
 try {

@@ -5,12 +5,34 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "preserveValueImports": false,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "paths": {
+      "@api/*": [
+        "src/api/*"
+      ]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      },
+      {
+        "transform": "typescript-transform-paths",
+        "afterDeclarations": true
+      },
+    ]
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "ts-node": {
+    "transpileOnly": true,
+    "require": [
+      "typescript-transform-paths/register"
+    ],
+  },
 }

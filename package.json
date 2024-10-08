@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "rm -rf dist && tsc -p tsconfig.json",
-    "start": "node dist/index.js",
+    "start": "node -r typescript-transform-paths/register dist/index.js",
+    "build": "rm -rf dist && tsc -p tsconfig.json && tsc-alias",
+    "start:prod": "node -r typescript-transform-paths/register dist/index.js",
     "test": "jest --verbose"
   },
   "author": "",
@@ -18,7 +19,8 @@
     "fastify-env": "^2.2.0",
     "fastify-plugin": "^5.0.1",
     "http": "^0.0.1-security",
-    "mariadb": "^3.3.2"
+    "mariadb": "^3.3.2",
+    "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.25.7",
@@ -33,7 +35,9 @@
     "nodemon": "^3.1.7",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
     "typescript": "^5.6.2",
-    "typescript-eslint": "^8.7.0"
+    "typescript-eslint": "^8.7.0",
+    "typescript-transform-paths": "^3.5.1"
   }
 }
