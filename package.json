@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node -r typescript-transform-paths/register dist/index.js",
-    "build": "rm -rf dist && tsc -p tsconfig.json && tsc-alias",
-    "start:prod": "node -r typescript-transform-paths/register dist/index.js",
+    "start": "node dist/index.js",
+    "build": "rm -rf dist && tsc -p tsconfig.json",
+    "start:prod": "node dist/index.js",
     "test": "jest --verbose"
   },
   "author": "",
@@ -23,6 +23,8 @@
     "tsconfig-paths": "^4.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.25.7",
+    "@babel/core": "^7.25.7",
     "@babel/preset-env": "^7.25.7",
     "@babel/preset-typescript": "^7.25.7",
     "@eslint/js": "^9.11.1",
@@ -30,6 +32,7 @@
     "@types/eslint__js": "^8.42.3",
     "@types/jest": "^29.5.13",
     "@types/node": "^22.7.4",
+    "babel-plugin-module-resolver": "^5.0.2",
     "eslint": "^9.11.1",
     "jest": "^29.7.0",
     "nodemon": "^3.1.7",

@@ -1,5 +1,5 @@
 import Fastify from 'fastify'
-import { addGame } from '@api/addGame'
+import { addGame } from './api/addGame'
 
 const fastify = Fastify({
     logger: true
