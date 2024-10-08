@@ -14,7 +14,7 @@ export const addGame = (fastify: FastifyInstance) => {
                         buyin: { type: 'number' },
                         rank: { type: 'number' }
                     },
-                    required: ['id', 'name', 'email']
+                    required: ['id', 'buyin', 'rank']
                 }
             }
         },
